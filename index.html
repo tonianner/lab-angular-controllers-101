@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MuseumApp">
+<head>
+  <meta charset="UTF-8">
+  <title>The Metropolitan Museum of Art</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/exhibitController.js"></script>
+  <script src="js/generalInfoController.js"></script>
+</head>
+<body>
+  <h1> The Metropolitan Museum of Art </h1>
+  <hr>
+  <section ng-controller="ExhibitCtrl">
+    <h4> Exhibit: </h4>
+    <img src="{{ image }}" width="{{ width }}">
+    <h4> {{ title }} </h4>
+    <h4> {{ author }}
+  </section>
+  <hr>
+
+  <section ng-controller="HoursCntrl">
+    <h4> General Info </h4>
+    <ul>
+      <li ng-repeat="x in hours">
+      {{ x.day }} : {{ x.hours}}
+    </li>
+    </ul>
+  </section>
+</body>
+</html>
