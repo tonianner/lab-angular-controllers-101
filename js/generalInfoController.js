@@ -1,11 +1,16 @@
-angular.module('MuseumApp', [])
-.controller('HoursCntrl', HoursFunction)
+angular.module('MuseumApp')
+  .controller('GeneralInfoController', GeneralInfoController)
 
-function HoursFunction (){
-  $scope.hours = [
-    {day: "Monday", time: "7:00am-9:00pm"},
-    {day: "Tuesday", time: "7:00am-9:00pm"},
-    {day: "Wednesday", time: "7:00am-9:00pm"},
-    {day: "Thursday", time: "7:00am-9:00pm"}
-  ]
+function GeneralInfoController ($scope){
+  $scope.hours = {
+    Monday:     "7:00am-9:00pm",
+    Tuesday:    "7:00am-9:00pm",
+    Wednesday:  "7:00am-9:00pm",
+    Thursday:   "7:00am-9:00pm"
+  };
+  $scope.admission = {
+    Adults: "$35",
+    Child:  "$20",
+    Senior: "$15"
+  }
 }

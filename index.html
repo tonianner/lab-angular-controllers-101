@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="MuseumApp">
+<html ng-app="MuseumApp">
 <head>
   <meta charset="UTF-8">
   <title>The Metropolitan Museum of Art</title>
@@ -8,24 +8,34 @@
   <script src="js/exhibitController.js"></script>
   <script src="js/generalInfoController.js"></script>
 </head>
+
 <body>
   <h1> The Metropolitan Museum of Art </h1>
   <hr>
-  <section ng-controller="ExhibitCtrl">
+  <section ng-controller="ExhibitController">
     <h4> Exhibit: </h4>
-    <img src="{{ image }}" width="{{ width }}">
+    <img ng-src="{{ image }}" width="{{ width }}" alt="{{ author }}">
     <h4> {{ title }} </h4>
-    <h4> {{ author }}
+    <h4> {{ author }} </h4>
   </section>
   <hr>
 
-  <section ng-controller="HoursCntrl">
+  <section ng-controller="GeneralInfoController">
     <h4> General Info </h4>
+    <h5> Hours: </h5>
     <ul>
-      <li ng-repeat="x in hours">
-      {{ x.day }} : {{ x.hours}}
-    </li>
+      <li ng-repeat="(key, value) in hours">
+        <strong>{{ key }} : </strong> {{ value }}
+      </li>
     </ul>
+    <h5> Suggested Admission: </h5>
+    <ul>
+      <li ng-repeat="(key, value) in admission">
+        <strong>{{ key }} : </strong> {{ value }}
+      </li>
+    </ul>
+    <hr>
   </section>
 </body>
+
 </html>
